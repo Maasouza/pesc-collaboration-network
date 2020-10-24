@@ -13,3 +13,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+html,
+body {
+  display: flex;
+  flex: 1;
+  min-height: 100%;
+  max-width: 100%;
+}
+
+#root {
+  display: flex;
+  flex: 1;
+}

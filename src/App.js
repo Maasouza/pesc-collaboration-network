@@ -1,11 +1,9 @@
 import React from 'react';
 
+import GraphView from './components/GraphView';
+
 const App = () => {
-  return (
-    <div className="App">
-      <p>Hello world</p>
-    </div>
-  );
+  return <GraphView />;
 };
 
 export default App;
