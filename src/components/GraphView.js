@@ -1,10 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, memo } from 'react';
 import * as d3 from 'd3';
 
 import colaborationNetwork from '../data/collaboration-network.json';
 import colors from '../data/colors';
 
-const GraphView = () => {
+const GraphView = ({ setNode }) => {
   const svgref = useRef(null);
 
   const bodyStrength = -110;
@@ -134,6 +134,8 @@ const GraphView = () => {
         .style('opacity', (l) =>
           dNode === l.source || dNode === l.target ? 1 : 0.2
         );
+
+      setNode(dNode);
     });
 
     node.on('mouseout', (_dNode) => {
@@ -165,4 +167,4 @@ const GraphView = () => {
   );
 };
 
-export default GraphView;
+export default memo(GraphView);
