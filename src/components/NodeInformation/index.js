@@ -14,7 +14,7 @@ const NodeInformation = ({ node }) => {
         <p className="node-property-value">{node.field || '-'}</p>
       </div>
       <div>
-        <p className="node-property-name">Grau</p>
+        <p className="node-property-name">Grau de colaboração</p>
         <p className="node-property-value">{node.degree || '-'}</p>
       </div>
     </div>
