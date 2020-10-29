@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, memo } from 'react';
 import * as d3 from 'd3';
 
-import colaborationNetwork from '../data/collaboration-network.json';
-import colors from '../data/colors';
+import colaborationNetwork from '../../data/collaboration-network.json';
+import colors from '../../data/colors';
 
 const GraphView = ({ setNode }) => {
   const svgref = useRef(null);
@@ -147,6 +147,8 @@ const GraphView = ({ setNode }) => {
         .style('opacity', 1);
 
       link.transition(transition).style('opacity', 1);
+
+      setNode({});
     });
 
     simulation.on('tick', () => {
