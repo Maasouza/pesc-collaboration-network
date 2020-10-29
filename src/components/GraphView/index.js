@@ -20,7 +20,11 @@ const GraphView = ({ setNode }) => {
 
       const linksIds = publication.authors.flatMap((authorA, idx) =>
         publication.authors.slice(idx + 1).map((authorB) => {
-          let linkId = `${authorA}-${authorB}`;
+          let [nodeA, nodeB] =
+            authorA.localeCompare(authorB) < 0
+              ? [authorA, authorB]
+              : [authorB, authorA];
+          let linkId = `${nodeA}-${nodeB}`;
           networkLinkStatus[linkId] = 1;
           return linkId;
         })
