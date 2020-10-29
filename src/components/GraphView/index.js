@@ -155,6 +155,28 @@ const GraphView = ({ setNode }) => {
       setNode({});
     });
 
+    const colorLegend = svg
+      .selectAll('.colorLegend')
+      .data(Object.keys(colors))
+      .enter()
+      .append('g')
+      .attr(
+        'transform',
+        (d, i) => 'translate(' + 15 + ',' + (15 + 25 * i) + ')'
+      );
+
+    colorLegend
+      .append('rect')
+      .attr('fill', (d) => colors[d])
+      .attr('width', 20)
+      .attr('height', 20);
+
+    colorLegend
+      .append('text')
+      .attr('x', 25)
+      .attr('y', 15)
+      .text((d) => d);
+
     simulation.on('tick', () => {
       link
         .attr('x1', (d) => d.source.x)
