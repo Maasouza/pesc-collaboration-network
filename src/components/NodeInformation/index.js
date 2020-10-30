@@ -10,7 +10,7 @@ const NodeInformation = ({ node }) => {
         <p className="node-property-value">{node.id || '-'}</p>
       </div>
       <div>
-        <p className="node-property-name">Campo</p>
+        <p className="node-property-name">Área de atuação</p>
         <p className="node-property-value">{node.field || '-'}</p>
       </div>
       <div>
