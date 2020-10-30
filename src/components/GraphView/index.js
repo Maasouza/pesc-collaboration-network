@@ -178,13 +178,23 @@ const GraphView = ({ setNode }) => {
       .text((d) => d);
 
     simulation.on('tick', () => {
+      const margin = 80;
+
+      node
+        .attr(
+          'cx',
+          (d) => (d.x = Math.max(margin, Math.min(width - margin, d.x)))
+        )
+        .attr(
+          'cy',
+          (d) => (d.y = Math.max(margin, Math.min(height - margin, d.y)))
+        );
+
       link
         .attr('x1', (d) => d.source.x)
         .attr('y1', (d) => d.source.y)
         .attr('x2', (d) => d.target.x)
         .attr('y2', (d) => d.target.y);
-
-      node.attr('cx', (d) => d.x).attr('cy', (d) => d.y);
     });
   });
 
