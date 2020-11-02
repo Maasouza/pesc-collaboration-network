@@ -7,8 +7,8 @@ import colors from '../../data/colors';
 const GraphView = ({ setNode }) => {
   const svgref = useRef(null);
 
-  const bodyStrength = -110;
-  const linkStrength = 0.05;
+  const bodyStrength = -400;
+  const linkStrength = 0.5;
 
   var networkLinkStatus = {};
 
