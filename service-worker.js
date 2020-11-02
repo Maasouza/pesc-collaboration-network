@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pesc-collaboration-network/precache-manifest.cc28e3feded149500664a943223ecb99.js"
+  "/pesc-collaboration-network/precache-manifest.c408870447149a36b703747250a1e20a.js"
 );
 
 self.addEventListener('message', (event) => {
