@@ -155,15 +155,19 @@ const GraphView = ({ setNode }) => {
       setNode({});
     });
 
+    // legendTitle
+    svg
+      .append('text')
+      .text('Área de atuação')
+      .attr('font-size', '1rem')
+      .attr('transform', 'translate(15, 30)');
+
     const colorLegend = svg
       .selectAll('.colorLegend')
       .data(Object.keys(colors))
       .enter()
       .append('g')
-      .attr(
-        'transform',
-        (d, i) => 'translate(' + 15 + ',' + (15 + 25 * i) + ')'
-      );
+      .attr('transform', (d, i) => 'translate(15,' + (40 + 25 * i) + ')');
 
     colorLegend
       .append('rect')
