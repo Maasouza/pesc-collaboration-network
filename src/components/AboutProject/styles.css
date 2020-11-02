@@ -1,0 +1,49 @@
+.about-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  right: 0;
+  width: 90px;
+  height: 35px;
+  margin: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  color: #808080;
+  overflow: hidden;
+  transition: width 1s, height 1s;
+}
+
+.about-container.openned {
+  height: 244px;
+  width: 475px;
+}
+
+.about-container .about-button {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  width: 90px;
+  height: 35px;
+  border-radius: 8px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.about-container .about-button:hover {
+  background: hsla(0, 0%, 90%, 0.5);
+}
+
+.about-container .about-content {
+  padding: 15px;
+}
+
+.about-container .about-content p {
+  margin: 5px;
+}
