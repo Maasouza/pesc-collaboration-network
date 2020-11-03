@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/pesc-collaboration-network/static/css/main.97297ee1.chunk.css",
-    "main.js": "/pesc-collaboration-network/static/js/main.f8d5564a.chunk.js",
-    "main.js.map": "/pesc-collaboration-network/static/js/main.f8d5564a.chunk.js.map",
+    "main.css": "/pesc-collaboration-network/static/css/main.1347fa6a.chunk.css",
+    "main.js": "/pesc-collaboration-network/static/js/main.e18a2f28.chunk.js",
+    "main.js.map": "/pesc-collaboration-network/static/js/main.e18a2f28.chunk.js.map",
     "runtime-main.js": "/pesc-collaboration-network/static/js/runtime-main.62882ff6.js",
     "runtime-main.js.map": "/pesc-collaboration-network/static/js/runtime-main.62882ff6.js.map",
     "static/js/2.a49d3c1b.chunk.js": "/pesc-collaboration-network/static/js/2.a49d3c1b.chunk.js",
     "static/js/2.a49d3c1b.chunk.js.map": "/pesc-collaboration-network/static/js/2.a49d3c1b.chunk.js.map",
     "index.html": "/pesc-collaboration-network/index.html",
-    "precache-manifest.e04b65679682143973cbb72458bc1f03.js": "/pesc-collaboration-network/precache-manifest.e04b65679682143973cbb72458bc1f03.js",
+    "precache-manifest.091b3d1b562a9909c711925f587953f1.js": "/pesc-collaboration-network/precache-manifest.091b3d1b562a9909c711925f587953f1.js",
     "service-worker.js": "/pesc-collaboration-network/service-worker.js",
-    "static/css/main.97297ee1.chunk.css.map": "/pesc-collaboration-network/static/css/main.97297ee1.chunk.css.map",
+    "static/css/main.1347fa6a.chunk.css.map": "/pesc-collaboration-network/static/css/main.1347fa6a.chunk.css.map",
     "static/js/2.a49d3c1b.chunk.js.LICENSE.txt": "/pesc-collaboration-network/static/js/2.a49d3c1b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.62882ff6.js",
     "static/js/2.a49d3c1b.chunk.js",
-    "static/css/main.97297ee1.chunk.css",
-    "static/js/main.f8d5564a.chunk.js"
+    "static/css/main.1347fa6a.chunk.css",
+    "static/js/main.e18a2f28.chunk.js"
   ]
 }
