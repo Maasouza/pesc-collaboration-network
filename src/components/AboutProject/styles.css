@@ -42,7 +42,7 @@
     padding 0s ease-in-out 0.3s, opacity 0.3s ease-in-out;
 }
 .about-container .about-content.openned {
-  height: 180px;
+  height: 190px;
   width: 490px;
   padding: 15px;
   opacity: 1;
@@ -52,4 +52,10 @@
 
 .about-container .about-content p {
   margin: 5px;
+}
+
+.about-container .about-content p.about-title {
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
 }

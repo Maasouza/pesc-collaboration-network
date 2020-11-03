@@ -14,7 +14,7 @@ const AboutProject = () => {
         sobre
       </div>
       <div className={openned ? 'about-content openned' : 'about-content'}>
-        <p>
+        <p className="about-title">
           Lista parcial de docentes que atuaram no PESC nos últimos 50 anos.
         </p>
         <p>Dados coletados diretamente do CV Lattes de cada docente.</p>
