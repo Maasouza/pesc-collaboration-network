@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { BsInfoCircle } from 'react-icons/bs';
+import { IoLogoGithub } from 'react-icons/io';
 
 import './styles.css';
 
@@ -27,6 +28,15 @@ const AboutProject = () => {
           Coleta e processamento dos dados: Pedro Cavaliere e Rodrigo Palmeira.
         </p>
         <p>Coordenação: Daniel Ratton.</p>
+        <a
+          className="github-button"
+          href="https://github.com/DamascenoRafael/pesc-collaboration-network"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <IoLogoGithub size={18} />
+          Ver no GitHub
+        </a>
       </div>
     </div>
   );
