@@ -15,7 +15,8 @@ const AboutProject = () => {
         sobre
       </div>
       <div className={openned ? 'about-content openned' : 'about-content'}>
-        <p className="about-title">
+        <p className="about-title">Rede de Colaboração Acadêmica do PESC</p>
+        <p>
           Lista parcial de docentes que atuaram no PESC nos últimos 50 anos.
         </p>
         <p>Dados coletados diretamente do CV Lattes de cada docente.</p>
@@ -27,7 +28,7 @@ const AboutProject = () => {
         <p>
           Coleta e processamento dos dados: Pedro Cavaliere e Rodrigo Palmeira.
         </p>
-        <p>Coordenação: Daniel Ratton.</p>
+        <p>Coordenação: Daniel Ratton Figueiredo.</p>
         <a
           className="github-button"
           href="https://github.com/DamascenoRafael/pesc-collaboration-network"
