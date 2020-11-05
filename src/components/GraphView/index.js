@@ -80,8 +80,8 @@ const GraphView = ({ setNode }) => {
   useEffect(() => {
     const svg = d3.select(svgref.current);
 
-    const width = svgref.current.clientWidth;
-    const height = svgref.current.clientHeight;
+    var width = svgref.current.clientWidth;
+    var height = svgref.current.clientHeight;
 
     const simulation = d3
       .forceSimulation(networkNodes)
@@ -205,6 +205,15 @@ const GraphView = ({ setNode }) => {
         .attr('x2', (d) => d.target.x)
         .attr('y2', (d) => d.target.y);
     });
+
+    const handleResize = () => {
+      width = svgref.current.clientWidth;
+      height = svgref.current.clientHeight;
+      simulation.force('center', d3.forceCenter(width / 2, height / 2));
+      simulation.alpha(0.3).restart();
+    };
+
+    window.addEventListener('resize', handleResize);
   });
 
   return (
