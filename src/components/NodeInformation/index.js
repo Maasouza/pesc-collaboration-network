@@ -5,11 +5,11 @@ import './styles.css';
 const NodeInformation = ({ node }) => {
   return (
     <div className="information-container">
-      <div>
+      <div style={{ width: '40%' }}>
         <p className="node-property-name">Nome</p>
         <p className="node-property-value">{node.id || '-'}</p>
       </div>
-      <div>
+      <div style={{ width: '40%' }}>
         <p className="node-property-name">Área de atuação</p>
         <p className="node-property-value">{node.field || '-'}</p>
       </div>

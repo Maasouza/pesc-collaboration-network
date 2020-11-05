@@ -1,23 +1,29 @@
 .information-container {
   position: absolute;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   bottom: 0;
   right: 0;
-  width: 320px;
-  height: 180px;
-  padding: 20px;
+  width: 95%;
+  max-width: 820px;
+  height: auto;
+  padding: 10px;
   margin: 20px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
+}
+
+.information-container div {
+  padding: 5px;
 }
 
 .information-container .node-property-name {
   color: #afafaf;
   font-weight: 500;
+  font-size: 0.8rem;
 }
 
 .information-container .node-property-value {
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
