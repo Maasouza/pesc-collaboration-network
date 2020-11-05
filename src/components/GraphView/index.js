@@ -115,7 +115,7 @@ const GraphView = ({ setNode }) => {
       .selectAll('line')
       .data(networkLinks)
       .join('line')
-      .attr('stroke-width', 1.5);
+      .attr('stroke-width', (d) => (d.publications ? 1.5 + Math.log(d.publications.length) : 1.5));
 
     const node = svg
       .append('g')
