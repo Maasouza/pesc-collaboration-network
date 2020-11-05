@@ -162,6 +162,7 @@ const GraphView = ({ setNode }) => {
       .attr('font-size', '0.9rem')
       .style('fill', 'rgb(45, 45, 45)')
       .style('user-select', 'none')
+      .style('pointer-events', 'none')
       .attr('transform', 'translate(15, 30)');
 
     const colorLegend = svg
@@ -184,6 +185,7 @@ const GraphView = ({ setNode }) => {
       .attr('font-size', '0.85rem')
       .style('fill', 'rgb(45, 45, 45)')
       .style('user-select', 'none')
+      .style('pointer-events', 'none')
       .text((d) => d);
 
     simulation.on('tick', () => {
