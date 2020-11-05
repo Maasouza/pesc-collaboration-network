@@ -125,6 +125,19 @@ const GraphView = ({ setNode }) => {
       .attr('fill', (d) => colors[d.field])
       .call(drag(simulation));
 
+    const zoomed = ({transform}) => {
+      link.attr("transform", transform);
+      node.attr("transform", transform);
+    }
+
+    svg.call(
+      d3
+      .zoom()
+      .extent([[0, 0], [width, height]])
+      .scaleExtent([.25, 2])
+      .on("zoom", zoomed)
+    );
+
     node.on('mouseover', (_event, dNode) => {
       const transition = d3.transition().duration(200);
 
