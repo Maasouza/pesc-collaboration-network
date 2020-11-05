@@ -159,7 +159,8 @@ const GraphView = ({ setNode }) => {
     svg
       .append('text')
       .text('Área de atuação')
-      .attr('font-size', '1rem')
+      .attr('font-size', '0.9rem')
+      .style('fill', 'rgb(45, 45, 45)')
       .attr('transform', 'translate(15, 30)');
 
     const colorLegend = svg
@@ -179,6 +180,8 @@ const GraphView = ({ setNode }) => {
       .append('text')
       .attr('x', 25)
       .attr('y', 15)
+      .attr('font-size', '0.85rem')
+      .style('fill', 'rgb(45, 45, 45)')
       .text((d) => d);
 
     simulation.on('tick', () => {
