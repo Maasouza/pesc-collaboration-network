@@ -1,4 +1,6 @@
 import React, { useRef, useEffect, memo } from 'react';
+import ReactDOMServer from 'react-dom/server';
+import {RiArrowUpSLine, RiArrowDownSLine} from 'react-icons/ri'
 import * as d3 from 'd3';
 
 import colaborationNetwork from '../../data/collaboration-network.json';
@@ -153,7 +155,7 @@ const GraphView = ({ setNode }) => {
         .select(_event.target)
         .transition()
         .duration(50)
-        .style("stroke",'#ff760d');
+          .style("stroke",'#ff760d');
 
       linkLabel
         .transition()
@@ -211,22 +213,95 @@ const GraphView = ({ setNode }) => {
       setNode({});
     });
 
+    const openIconHTML = ReactDOMServer.renderToString(<RiArrowDownSLine />);
+    const closeIconHTML = ReactDOMServer.renderToString(<RiArrowUpSLine />);
+
+    const researchAreaContainer = svg
+      .append('g')
+      .attr('id','researchAreaContainer')
+      .attr('stroke-width', '0')
+      .attr('height','10px')
+      .style('cursor', 'pointer')
+      .attr('open',1);
+
+    const icon = svg
+      .append('g')
+      .attr('id','icon')
+      .style('cursor', 'pointer')
+      .attr('transform', 'translate(130, 11)')
+
+    icon
+      .html(closeIconHTML)
+      .select('svg')
+      .attr('width','2em')
+      .attr('height','2em');
+    
     // legendTitle
-    svg
+    researchAreaContainer
       .append('text')
-      .text('Área de atuação')
+      .text('Áreas de pesquisa')
       .attr('font-size', '0.9rem')
       .style('fill', 'rgb(45, 45, 45)')
-      .style('user-select', 'none')
-      .style('pointer-events', 'none')
+      .style('cursor', 'pointer')
       .attr('transform', 'translate(15, 30)');
 
-    const colorLegend = svg
+    const toggleresearchAreaContainer = () => {
+      const isOpen = parseInt(researchAreaContainer.attr('open'))
+      if(isOpen){
+        researchAreaContainer
+          .attr('open', 0);
+
+        researchAreaContainer
+          .selectAll("g")
+          .transition()
+          .attr("opacity", 0)
+          .delay(
+            function(d, i) { 
+              return (researchAreaContainer.selectAll("g").size()-i)*100;
+            })
+          .duration(500);
+
+        svg
+          .select('#icon')
+          .html(openIconHTML)
+          .transition()
+          .select('svg')
+          .attr('width','2em')
+          .attr('height','2em')
+          .duration(100);
+
+      }else{
+        researchAreaContainer
+          .attr('open', 1);
+
+        researchAreaContainer
+          .selectAll("g")
+          .transition()
+          .attr("opacity", 1)
+          .delay(function(d, i) { return 100*(i); })
+          .duration(500);
+
+        svg
+          .select('#icon')
+          .html(closeIconHTML)
+          .transition()
+          .select('svg')
+          .attr('width','2em')
+          .attr('height','2em') 
+          .duration(100);
+      }
+    };
+
+    icon.on("click", toggleresearchAreaContainer);
+    researchAreaContainer.on("click", toggleresearchAreaContainer);
+
+    const colorLegend = researchAreaContainer
       .selectAll('.colorLegend')
       .data(Object.keys(colors))
       .enter()
       .append('g')
-      .attr('transform', (d, i) => 'translate(15,' + (40 + 25 * i) + ')');
+      .attr('transform', (d, i) => 'translate(15,' + (40 + 25 * i) + ')')
+      .attr('opacity',1);
 
     colorLegend
       .append('rect')
@@ -241,8 +316,8 @@ const GraphView = ({ setNode }) => {
       .attr('font-size', '0.85rem')
       .style('fill', 'rgb(45, 45, 45)')
       .style('user-select', 'none')
-      .style('pointer-events', 'none')
       .text((d) => d);
+
 
     simulation.on('tick', () => {
       const margin = 80;
