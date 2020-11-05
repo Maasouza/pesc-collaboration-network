@@ -117,6 +117,13 @@ const GraphView = ({ setNode }) => {
       .join('line')
       .attr('stroke-width', (d) => (d.publications ? 1.5 + Math.log(d.publications.length) : 1.5));
 
+    var linkLabel = 
+      d3
+      .select("body")
+      .append("div")
+      .attr("class", "link-label")
+      .style("opacity", 0);
+
     const node = svg
       .append('g')
       .attr('stroke', '#fff')
@@ -140,6 +147,39 @@ const GraphView = ({ setNode }) => {
       .scaleExtent([.25, 2])
       .on("zoom", zoomed)
     );
+
+    link.on('mouseover',  (_event, link) => {
+      d3
+        .select(_event.target)
+        .transition()
+        .duration(50)
+        .style("stroke",'#ff760d');
+
+      linkLabel
+        .transition()
+        .duration(50)
+        .style("opacity", 1);
+
+      const label = "Colaborações: "+link.publications.length
+
+      linkLabel
+        .html(label)
+        .style("position", 'absolute')
+        .style("left", (_event.x + 10) + "px")
+        .style("top", (_event.y - 15) + "px");
+    });
+
+    link.on('mouseout',  (_event, link) => {
+      d3
+        .select(_event.target)
+        .transition()
+        .duration(50)
+        .style("stroke",'#999');
+
+      linkLabel.transition()
+        .duration('50')
+        .style("opacity", 0);
+    });
 
     node.on('mouseover', (_event, dNode) => {
       const transition = d3.transition().duration(200);

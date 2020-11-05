@@ -26,3 +26,17 @@ body {
   display: flex;
   flex: 1;
 }
+
+div.link-label {
+  min-width: 32px;
+  min-height: 20px;
+  position: absolute;
+  text-align: center;
+  padding: 0.5rem;
+  background: #ffffff;
+  color: #313639;
+  border-radius: 8px;
+  pointer-events: none;
+  font-size: 10px;
+  box-shadow: 0 0 5px 0.1px #333;
+}
