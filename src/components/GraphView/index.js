@@ -8,7 +8,7 @@ const GraphView = ({ setNode }) => {
   const svgref = useRef(null);
 
   const bodyStrength = -400;
-  const linkStrength = 0.5;
+  const linkStrength = 0.25;
 
   var networkLinkStatus = {};
 
@@ -98,11 +98,14 @@ const GraphView = ({ setNode }) => {
       .force('y', d3.forceY());
 
     networkLinks.forEach((link) => {
+
+      const publicationsTogether = link.publications.length
+
       if (!link.source.degree) link.source.degree = 0;
       if (!link.target.degree) link.target.degree = 0;
 
-      link.source.degree++;
-      link.target.degree++;
+      link.source.degree += publicationsTogether;
+      link.target.degree += publicationsTogether;
     });
 
     const link = svg
