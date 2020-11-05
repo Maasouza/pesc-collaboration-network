@@ -6,6 +6,8 @@ import * as d3 from 'd3';
 import colaborationNetwork from '../../data/collaboration-network.json';
 import colors from '../../data/colors';
 
+import './style.css'
+
 const GraphView = ({ setNode }) => {
   const svgref = useRef(null);
 
@@ -161,8 +163,8 @@ const GraphView = ({ setNode }) => {
         .transition()
         .duration(50)
         .style("opacity", 1);
-
-      const label = "Colaborações: "+link.publications.length
+      console.log(link)
+      const label = `<div class='link-authors'>${link.source.id} <br> ${link.target.id}</div> <br>Colaborações: ${link.publications.length}`
 
       linkLabel
         .html(label)
